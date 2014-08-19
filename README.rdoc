@@ -1,3 +1,4 @@
 Welcome: 
 
 8/19/2014: Reinteractive: Ruby On Rails 3.2 Blog in 15 minutes Step by step.
+8/19/2014: Implemented comments for post model
