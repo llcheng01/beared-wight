@@ -3,7 +3,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+      @posts = Post.order(:created_at).select("posts.*, count(comments.id) as comments_count").joins("left outer join comments on post_id=posts.id").group("posts.id")
+      # Rack::MiniProfiler.step("fetch posts") do
+      #   @posts = Post.all
+      # end
 
     respond_to do |format|
       format.html # index.html.erb

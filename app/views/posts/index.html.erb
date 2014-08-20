@@ -1,5 +1,12 @@
 <h1>Listing posts</h1>
 
-<%= render :partial => @posts %>
-
+<% @posts.each do |post| %>
+    <div class="post">
+        <h2><%= link_to post.title, post %></h2>
+        <%= pluralize post.comments_count, "post" %>|
+        <%= link_to 'Edit', edit_post_path(post) %>|
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+<% end %>
+<br />
 <%= link_to 'New Post', new_post_path %>
