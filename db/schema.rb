@@ -22,14 +22,6 @@ ActiveRecord::Schema.define(:version => 20140819215956) do
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
-  create_table "groups", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "groups", ["name"], :name => "index_groups_on_name", :unique => true
-
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
