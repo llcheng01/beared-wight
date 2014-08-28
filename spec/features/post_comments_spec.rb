@@ -11,7 +11,7 @@ feature 'Posting Comments' do
 
        comment = 'This post is just fliller text. Ripped off!'
        fill_in 'comment_body', :with => comment
-       click_button 'Add Comment'
+       click_button 'Add comment'
 
        expect(page).to have_content comment
    end

@@ -17,6 +17,6 @@ feature 'Reading the blog' do
         visit root_path
         click_link 'Awesome Blog Post'
 
-        expect(current_path).to post_path(@post)
+        expect(current_path).to eql post_path(@post)
     end
 end
